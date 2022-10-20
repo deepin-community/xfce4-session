@@ -1,0 +1,24 @@
+From: Yves-Alexis Perez <corsac@debian.org>
+Date: Thu, 3 Jan 2019 21:12:40 +0100
+Subject: Update locker list in xflock4
+
+add light-locker. xfce4-screensaver and mate-screensaver
+---
+ scripts/xflock4 | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/scripts/xflock4 b/scripts/xflock4
+index 7ebb423..32670f4 100644
+--- a/scripts/xflock4
++++ b/scripts/xflock4
+@@ -29,7 +29,9 @@ for lock_cmd in \
+     "$LOCK_CMD" \
+     "xfce4-screensaver-command --lock" \
+     "xscreensaver-command -lock" \
+-    "gnome-screensaver-command --lock"
++    "light-locker-command --lock" \
++    "gnome-screensaver-command --lock" \
++    "mate-screensaver-command --lock"
+ do
+     if [ ! -z "$lock_cmd" ]; then
+         $lock_cmd >/dev/null 2>&1 && exit
